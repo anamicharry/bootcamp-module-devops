@@ -5,10 +5,22 @@ files:
     destination: /home/ec2-user/app
 hooks:
   ApplicationStop:
-    # Detener app
+  # Detener app
+    - location: talleres/08/scripts/stop_app.sh
+      timeout: 300
+      runas: root
   BeforeInstall:
-    # Instalar dependencias
+  # Instalar dependencias
+    - location: talleres/08/scripts/install_dependencies.sh
+      timeout: 300
+      runas: root
   AfterInstall:
-    # Instalar librerías
+  # Instalar librerías
+    - location: talleres/08/scripts/install_libraries.sh
+      timeout: 300
+      runas: root
   ApplicationStart:
-    # Iniciar app
+   # Iniciar app
+    - location: talleres/08/scripts/start_app.sh
+      timeout: 3
+      runas: root
