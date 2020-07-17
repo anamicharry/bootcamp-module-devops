@@ -1,3 +1,7 @@
+	aws deploy push \
+  --application-name MythicalMysfitsEC2 \
+  --s3-location s3://deploy-base-s3bucket-1hgwg4owazx8z/Mythical-2.zip \
+  --ignore-hidden-files
 AWSTemplateFormatVersion: 2010-09-09
 Description: Recursos base para taller de CodeDeploy
 
